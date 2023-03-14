@@ -5,7 +5,6 @@
   background-color: lightgrey;
   user-select: none;
 }
-
 .board {
   padding: 2rem;
   background-color: #FFFFFF;
@@ -13,7 +12,6 @@
   padding-top: 100px;
   position: relative;
 }
-
 .dropped {
   background: #FFFFFF;
   border: none;
@@ -21,17 +19,16 @@
   width: 243px;
   height: 448px;
 }
-
 .filled {
   background: #FFFFFF;
   border: 2px dashed #C4C4C4;
   position: relative;
-}
-.filled::after {
-  content: url("../public/Frame.svg");
-  position: absolute;
-  top: 182px;
-  left: 58px;
+
+  &::after{
+    content: url("../public/Frame.svg");
+    position: absolute;
+    top: 182px;
+    left: 58px;
+  }
 }
 
-/*# sourceMappingURL=App.css.map */
