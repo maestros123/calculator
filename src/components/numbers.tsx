@@ -1,6 +1,6 @@
 import './components.scss';
 
-export const Numbers = ({ result, setResult, tmpResult, setTmpResult, activeButton }: { result: any, setResult: any, tmpResult: any, setTmpResult: any, activeButton: number}) => {
+export const Numbers = ({ result, setResult, tmpResult, setTmpResult, activeButton, itemRefs }: { result: any, setResult: any, tmpResult: any, setTmpResult: any, activeButton: number, itemRefs: any}) => {
     const numbers = [
         ['7', '8', '9'],
         ['4', '5', '6'],
@@ -9,9 +9,10 @@ export const Numbers = ({ result, setResult, tmpResult, setTmpResult, activeButt
     ];
 
     function handleNumberClick(s: string) {
-        if (activeButton === 0) {
+        if (activeButton === 0 || itemRefs.current[2].parentElement.className === 'elements' || itemRefs.current[0].parentElement.className === 'elements') {
             return;
         }
+
         if (s === ',' && result.includes(',')){ // Нельзя несколько запятых
             return;
         }

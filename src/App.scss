@@ -32,3 +32,17 @@
   }
 }
 
+.line {
+  position: relative;
+  &::after {
+    content: url("../public/line.svg");
+    color: red;
+    background-image: url("../public/line.svg");
+    position: absolute;
+    width: 244px;
+    height: 1px;
+    bottom: 7px;
+    left: -4px;
+  }
+}
+
