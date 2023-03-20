@@ -12,8 +12,11 @@ export const Numbers = ({ result, setResult, tmpResult, setTmpResult, activeButt
         if (activeButton === 0 ||
             itemRefs.current[2].parentElement.className === 'elements' ||
             itemRefs.current[0].parentElement.className === 'elements' ||
-            result.includes(',') ||
             result.length > 15) {
+            return;
+        }
+
+        if (result.includes(',') && s === ',') {
             return;
         }
 
