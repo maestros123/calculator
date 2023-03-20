@@ -1,3 +1,17 @@
+.dropped {
+  .container {
+    box-shadow: none;
+
+    .math-sign, .num-sign {
+      &:hover {
+        outline: 2px solid rgba(93, 95, 239, 1);
+      }
+    }
+
+  }
+}
+
+
 .container {
   width: 240px;
   margin: 6px 0;
@@ -15,9 +29,10 @@
   display: flex;
   justify-content: end;
   align-items: center;
-  font-size: 44px;
+  font-size: 36px;
   font-weight: bold;
   padding-right: 4px;
+  overflow: hidden;
 }
 .row {
   display: flex;
@@ -71,21 +86,41 @@
   width: 243px;
   position: absolute;
   top: 38px;
+
+  button {
+    padding: 8px 12px;
+    color: #4D5562;
+    border: 0;
+    background: #F3F4F6;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+
+    &.active {
+      svg {
+        path {
+          stroke: #5D5FEF;
+        }
+      }
+    }
+
+    span {
+      margin-left: 3px;
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+
+      path {
+        stroke:#4D5562;
+      }
+    }
+  }
 }
-.buttons button {
-  padding: 8px 12px;
-  color: #4D5562;
-  border: 0;
-  background: #F3F4F6;
-  font-size: 14px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
-}
-button img {
-  margin-right: 10px;
-}
+
 .buttons button.active {
   background: #FFFFFF;
   border: 1px solid #E2E3E5;

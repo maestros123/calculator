@@ -35,8 +35,12 @@ function App() {
 
     function handleDrop(e: any) {
         e.preventDefault();
+
         const droppedElement = itemRefs.current[activeItemIndex as number];
         const targetElement = e.target;
+        if (targetElement.closest('.elements')) {
+            return
+        }
         droppedElement!.draggable = false
 
         if (targetElement.className === "dropped filled") {
@@ -61,6 +65,8 @@ function App() {
                 prevEl.after(clone)
             }
         }
+
+
         const elem: any = elementRef.current!.children[activeItemIndex!]
         elem.style.opacity = 0.5
         setActiveItemIndex(null);
@@ -84,7 +90,6 @@ function App() {
             deleteElement!.remove()
         }
     }
-
 
     return (
         <div className="App">

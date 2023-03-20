@@ -9,13 +9,15 @@ export const Numbers = ({ result, setResult, tmpResult, setTmpResult, activeButt
     ];
 
     function handleNumberClick(s: string) {
-        if (activeButton === 0 || itemRefs.current[2].parentElement.className === 'elements' || itemRefs.current[0].parentElement.className === 'elements') {
+        if (activeButton === 0 ||
+            itemRefs.current[2].parentElement.className === 'elements' ||
+            itemRefs.current[0].parentElement.className === 'elements' ||
+            result.includes(',') ||
+            result.length > 15) {
             return;
         }
 
-        if (s === ',' && result.includes(',')){ // Нельзя несколько запятых
-            return;
-        }
+
         if (tmpResult === '0' && s !== ',') {
             setResult(s)
             setTmpResult(s)
